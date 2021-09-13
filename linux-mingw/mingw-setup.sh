@@ -11,7 +11,7 @@ wget -q "${MINGW_URL}" -O 'mingw.7z'
 cp -rv "${TARGET_DIR}"/* '/usr/x86_64-w64-mingw32/lib/'
 
 # SDL2
-SDL2_VER='2.0.12'
+SDL2_VER='2.0.16'
 wget "https://www.libsdl.org/release/SDL2-devel-${SDL2_VER}-mingw.tar.gz"
 tar -zxf "SDL2-devel-${SDL2_VER}-mingw.tar.gz"
 cd SDL2-${SDL2_VER}/
@@ -19,17 +19,16 @@ make install-package arch=x86_64-w64-mingw32 prefix=/usr/x86_64-w64-mingw32;
 cd ..
 
 # ffmpeg
-FFMPEG_VER='4.1'
-for i in 'shared' 'dev'; do
-  echo "Downloading ffmpeg (${i})..."
-  wget -q -c "https://ffmpeg.zeranoe.com/builds/win64/${i}/ffmpeg-${FFMPEG_VER}-win64-${i}.zip"
-  7z x "ffmpeg-${FFMPEG_VER}-win64-${i}.zip" > /dev/null
-done
+FFMPEG_VER='4.4'
+FILENAME="ffmpeg-n${FFMPEG_VER}-151-g5e61fce832-win64-gpl-shared-${FFMPEG_VER}"
+echo "Downloading ffmpeg (${FFMPEG_VER})..."
+wget -q -c "https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2021-09-13-12-21/${FILENAME}.zip"
+7z x "${FILENAME}.zip"
 
 echo "Copying ffmpeg ${FFMPEG_VER} files to sysroot..."
-cp -v "ffmpeg-${FFMPEG_VER}-win64-shared"/bin/*.dll /usr/x86_64-w64-mingw32/lib/
-cp -vr "ffmpeg-${FFMPEG_VER}-win64-dev"/include /usr/x86_64-w64-mingw32/
-cp -v "ffmpeg-${FFMPEG_VER}-win64-dev"/lib/*.{a,def} /usr/x86_64-w64-mingw32/lib/
+cp -v "${FILENAME}"/bin/*.dll /usr/x86_64-w64-mingw32/lib/
+cp -vr "${FILENAME}"/include /usr/x86_64-w64-mingw32/
+cp -v "${FILENAME}"/lib/*.{a,def} /usr/x86_64-w64-mingw32/lib/
 
 # remove the directory
 ABS_PATH="$(readlink -f $0)"

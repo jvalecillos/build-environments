@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:bullseye-slim
 LABEL maintainer="citraemu"
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y full-upgrade

@@ -4,7 +4,7 @@ LABEL maintainer="citraemu"
 # Add mingw-repo "ownstuff" is a AUR with an up to date mingw64
 # Runs pacman -Syu twice in order to work around pacman issues where the first run only updates the
 # current distro packages, and the second run actually pulls the updates from the repos.
-RUN useradd -m -u 1027 -s /bin/bash yuzu && mkdir -p /tmp/pkgs && \
+RUN useradd -m -u 1027 -s /bin/bash citra && mkdir -p /tmp/pkgs && \
     echo "[ownstuff]" >> /etc/pacman.conf && \
     echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf && \
     echo "Server = https://martchus.no-ip.biz/repo/arch/ownstuff/os/\$arch" >> /etc/pacman.conf && \

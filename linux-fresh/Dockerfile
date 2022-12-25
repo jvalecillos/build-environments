@@ -24,4 +24,5 @@ RUN apt-get install -y \
     ccache \
     cmake \
     ninja-build \
-    glslang-dev
+    glslang-dev \
+    glslang-tools

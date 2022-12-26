@@ -2,19 +2,11 @@
 # install pefile
 pip3 install pefile
 
-# SDL2
-SDL2_VER='2.0.22'
-wget "https://www.libsdl.org/release/SDL2-devel-${SDL2_VER}-mingw.tar.gz"
-tar -zxf "SDL2-devel-${SDL2_VER}-mingw.tar.gz"
-cd SDL2-${SDL2_VER}/
-make install-package arch=x86_64-w64-mingw32 prefix=/usr/x86_64-w64-mingw32;
-cd ..
-
 # ffmpeg
-FFMPEG_VER='4.4.2'
-FILENAME="ffmpeg-n${FFMPEG_VER}-95-ga8f16d4eb4-win64-gpl-shared-${FFMPEG_VER%.*}"
+FFMPEG_VER='5.1.2'
+FILENAME="ffmpeg-n${FFMPEG_VER}-9-g807afa59cc-win64-gpl-shared-${FFMPEG_VER%.*}"
 echo "Downloading ffmpeg (${FFMPEG_VER})..."
-wget -c "https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2022-10-03-12-38/${FILENAME}.zip"
+wget -c "https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2022-12-25-12-38/${FILENAME}.zip"
 7z x "${FILENAME}.zip"
 
 echo "Copying ffmpeg ${FFMPEG_VER} files to sysroot..."

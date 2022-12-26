@@ -8,6 +8,7 @@ RUN apt-get update && apt-get -y full-upgrade
 RUN apt-get install -y \
     p7zip-full \
     build-essential \
+    software-properties-common \
     libsdl2-dev \
     qtbase5-dev \
     qtbase5-private-dev \
@@ -24,5 +25,10 @@ RUN apt-get install -y \
     ccache \
     cmake \
     ninja-build \
+    && \
+# Install updated version of glslang
+    add-apt-repository -y ppa:savoury1/ffmpeg4 && \
+    apt-get update -y && \
+    apt-get install --no-install-recommends -y \
     glslang-dev \
     glslang-tools

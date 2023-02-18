@@ -4,9 +4,10 @@ pip3 install pefile
 
 # ffmpeg
 FFMPEG_VER='5.1.2'
-FILENAME="ffmpeg-n${FFMPEG_VER}-9-g807afa59cc-win64-gpl-shared-${FFMPEG_VER%.*}"
+LINK_PATH="autobuild-2023-01-28-12-37/ffmpeg-n5.1.2-11-g30d432f205-win64-gpl-shared-5.1"
+FILENAME="${LINK_PATH##*/}"
 echo "Downloading ffmpeg (${FFMPEG_VER})..."
-wget -c "https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2022-12-25-12-38/${FILENAME}.zip"
+wget -c "https://github.com/BtbN/FFmpeg-Builds/releases/download/${LINK_PATH}.zip"
 7z x "${FILENAME}.zip"
 
 echo "Copying ffmpeg ${FFMPEG_VER} files to sysroot..."

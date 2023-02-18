@@ -4,7 +4,7 @@ pip3 install pefile
 
 # ffmpeg
 FFMPEG_VER='5.1.2'
-LINK_PATH="autobuild-2023-01-28-12-37/ffmpeg-n5.1.2-11-g30d432f205-win64-gpl-shared-5.1"
+LINK_PATH="autobuild-2023-02-17-12-38/ffmpeg-n5.1.2-12-g7268323193-win64-gpl-shared-5.1"
 FILENAME="${LINK_PATH##*/}"
 echo "Downloading ffmpeg (${FFMPEG_VER})..."
 wget -c "https://github.com/BtbN/FFmpeg-Builds/releases/download/${LINK_PATH}.zip"

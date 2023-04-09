@@ -33,6 +33,7 @@ RUN apt-get install -y \
     qt5-gtk-platformtheme \
     qt5ct \
     qt5-style-plugins \
+    file \
     && \
 # Install updated version of cmake and missing libfdk-aac-dev
     apt-add-repository 'deb http://deb.debian.org/debian bullseye main contrib non-free' && \

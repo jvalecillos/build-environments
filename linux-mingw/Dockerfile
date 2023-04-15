@@ -32,6 +32,9 @@ RUN useradd -m -u 1027 -s /bin/bash citra && mkdir -p /tmp/pkgs && \
     mingw-w64-qt5-multimedia \
     mingw-w64-qt5-tools \
     mingw-w64-qt5-winextras \
+    mingw-w64-qt6-base \
+    mingw-w64-qt6-multimedia \
+    mingw-w64-qt6-tools \
     mingw-w64-tools \
     mingw-w64-sdl2 \
     mingw-w64-winpthreads \

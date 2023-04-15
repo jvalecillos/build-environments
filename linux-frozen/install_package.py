@@ -40,7 +40,9 @@ def get_package(pkg, distro):
     url = get_url(pkg, distro)
     subprocess.check_call(['wget', '--quiet', url[0], '-O', url[1]])
     for dep in list_dependencies(url[1]):
-        get_package(dep, distro)
+        # qt6-base-abi is a virtual package, which breaks the script.
+        if dep[0] != 'qt6-base-abi':
+            get_package(dep, distro)
     processed_packages.append(pkg)
     deb_file_list.append('./' + url[1])
 

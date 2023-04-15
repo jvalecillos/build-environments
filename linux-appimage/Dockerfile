@@ -35,13 +35,19 @@ RUN apt-get install -y \
     qt5-style-plugins \
     file \
     && \
-# Install updated version of cmake and missing libfdk-aac-dev
+# Install updated version of cmake and missing libfdk-aac-dev, qt6
     apt-add-repository 'deb http://deb.debian.org/debian bullseye main contrib non-free' && \
     apt-add-repository 'deb http://deb.debian.org/debian bullseye-backports main contrib non-free' && \
     apt-get update -y && \
     apt-get install -y \
     libfdk-aac-dev \
-    cmake/bullseye-backports
+    cmake/bullseye-backports \
+    qt6-base-dev \
+    qt6-base-private-dev \
+    libqt6opengl6-dev \
+    qt6-multimedia-dev \
+    qt6-tools-dev \
+    qt6-tools-dev-tools
 # Downloading Tools for Building AppImages
 RUN wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
 RUN wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage

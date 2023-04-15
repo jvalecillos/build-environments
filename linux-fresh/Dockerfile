@@ -16,6 +16,12 @@ RUN apt-get install -y \
     qtmultimedia5-dev \
     qttools5-dev \
     qttools5-dev-tools \
+    qt6-base-dev \
+    qt6-base-private-dev \
+    libqt6opengl6-dev \
+    qt6-multimedia-dev \
+    qt6-tools-dev \
+    qt6-tools-dev-tools \
     libavcodec-dev \
     libavfilter-dev \
     libavformat-dev \

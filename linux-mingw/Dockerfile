@@ -39,6 +39,7 @@ RUN useradd -m -u 1027 -s /bin/bash citra && mkdir -p /tmp/pkgs && \
     mingw-w64-qt6-tools \
     mingw-w64-tools \
     mingw-w64-sdl2 \
+    mingw-w64-vulkan-headers \
     mingw-w64-winpthreads \
     mingw-w64-zlib \
     mingw-w64-zstd \

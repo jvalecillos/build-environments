@@ -20,6 +20,7 @@ RUN apt-get install -y \
     qt6-base-private-dev \
     libqt6opengl6-dev \
     qt6-multimedia-dev \
+    qt6-l10n-tools \
     qt6-tools-dev \
     qt6-tools-dev-tools \
     libavcodec-dev \

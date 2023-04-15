@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV CMAKE_VER=3.22.6
 
 RUN apt-get update && apt-get -y full-upgrade
-RUN apt-get install -y git p7zip-full libqt5opengl5-dev qtmultimedia5-dev qttools5-dev qttools5-dev-tools libqt6opengl6-dev qt6-multimedia-dev qt6-tools-dev qt6-tools-dev-tools python3-pip cmake curl unzip zip
+RUN apt-get install -y git p7zip-full libqt5opengl5-dev qtmultimedia5-dev qttools5-dev qttools5-dev-tools libqt6opengl6-dev qt6-multimedia-dev qt6-l10n-tools qt6-tools-dev qt6-tools-dev-tools python3-pip cmake curl unzip zip
 RUN curl -O -L https://github.com/transifex/cli/releases/latest/download/tx-linux-amd64.tar.gz && tar xf tx-linux-amd64.tar.gz tx && mv tx /usr/bin/tx && rm tx-linux-amd64.tar.gz
 
 # Install CMake from upstream

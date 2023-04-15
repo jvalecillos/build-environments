@@ -23,6 +23,8 @@ RUN useradd -m -u 1027 -s /bin/bash citra && mkdir -p /tmp/pkgs && \
     p7zip \
     cmake \
     ninja \
+    qt6-base \
+    qt6-tools \
     mingw-w64-boost \
     mingw-w64-gcc \
     mingw-w64-libusb \

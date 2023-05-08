@@ -43,6 +43,7 @@ RUN useradd -m -u 1027 -s /bin/bash citra && mkdir -p /tmp/pkgs && \
     mingw-w64-winpthreads \
     mingw-w64-zlib \
     mingw-w64-zstd \
+    mingw-w64-glslang \
     && \
     pacman -Scc --noconfirm && \
     rm -rf /usr/share/man/ /tmp/* /var/tmp/ /usr/{i686-w64-mingw32,lib32} /usr/lib/gcc/i686-w64-mingw32 && \

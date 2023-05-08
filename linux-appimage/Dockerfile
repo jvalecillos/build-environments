@@ -1,5 +1,6 @@
 FROM debian:bullseye-backports
 LABEL maintainer="citraemu"
+
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Create a user account citra (UID 1027) that the container will run as
@@ -44,12 +45,20 @@ RUN apt-get install -y -t bullseye-backports \
     cmake \
     p7zip-full \
     wget \
+    unzip \
     git \
     ccache \
     ninja-build \
     glslang-dev \
     glslang-tools \
     file
+
+# Install glslang
+RUN cd /tmp
+RUN wget https://github.com/KhronosGroup/glslang/releases/download/main-tot/glslang-main-linux-Release.zip
+RUN unzip glslang-main-linux-Release.zip -d glslang
+RUN cp -rv glslang/* /usr
+run rm -rf glslang-*
 
 # Download tools for building AppImages
 RUN wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage

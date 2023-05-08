@@ -34,7 +34,7 @@ RUN apt-get install -y \
     ninja-build \
     && \
 # Install updated version of glslang
-    add-apt-repository -y ppa:savoury1/ffmpeg4 && \
+    add-apt-repository -y ppa:theofficialgman/gpu-tools && \
     apt-get update -y && \
     apt-get install --no-install-recommends -y \
     glslang-dev \

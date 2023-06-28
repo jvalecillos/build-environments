@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        image: ["linux-appimage", "linux-clang-format", "linux-flatpak", "linux-fresh", "linux-frozen", "linux-mingw", "linux-transifex"]
+        image: ["linux-appimage", "linux-fresh"]
     
     steps:
     - uses: actions/checkout@v3

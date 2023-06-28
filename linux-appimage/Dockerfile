@@ -24,18 +24,6 @@ RUN apt-get install -y \
     gcc-11 \
     g++-11 \
     cpp-11 \
-# Qt 5
-    qtbase5-dev \
-    qtbase5-private-dev \
-    libqt5opengl5-dev \
-    qtmultimedia5-dev \
-    qttools5-dev \
-    qttools5-dev-tools \
-    qt5-gtk-platformtheme \
-    qt5ct \
-    qt5-style-plugins \
-    libqt5opengl5-dev \
-    libqt5multimedia5-plugins \
 # Qt 6
     qt6-base-dev \
     qt6-base-private-dev \

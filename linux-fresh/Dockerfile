@@ -28,7 +28,10 @@ RUN apt-get install -y \
     qt6-multimedia-dev \
     qt6-l10n-tools \
     qt6-tools-dev \
-    qt6-tools-dev-tools
+    qt6-tools-dev-tools \
+    libgl-dev \
+    # Other libraries
+    libsdl2-dev
 
 # Install updated version of glslang
 RUN add-apt-repository -y ppa:theofficialgman/gpu-tools

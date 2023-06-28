@@ -24,6 +24,7 @@ RUN apt-get install -y \
     # Qt 6
     qt6-base-dev \
     qt6-base-private-dev \
+    libqt6opengl6-dev \
     qt6-multimedia-dev \
     qt6-l10n-tools \
     qt6-tools-dev \

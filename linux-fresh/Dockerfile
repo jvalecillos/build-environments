@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:23.04
 LABEL maintainer="citraemu"
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -10,7 +10,7 @@ RUN apt-get install -y \
     # Tools
     build-essential \
     ccache \
-    clang-format-12 \
+    clang-format-15 \
     cmake \
     curl \
     git \
@@ -30,15 +30,11 @@ RUN apt-get install -y \
     qt6-tools-dev \
     qt6-tools-dev-tools \
     libgl-dev \
+    # glslang
+    glslang-dev \
+    glslang-tools \
     # Other libraries
     libsdl2-dev
-
-# Install updated version of glslang
-RUN add-apt-repository -y ppa:theofficialgman/gpu-tools
-RUN apt-get update -y && \
-    apt-get install --no-install-recommends -y \
-    glslang-dev \
-    glslang-tools
 
 # Install Transifex client
 RUN curl -O -L https://github.com/transifex/cli/releases/latest/download/tx-linux-amd64.tar.gz && \

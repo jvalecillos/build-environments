@@ -53,6 +53,13 @@ RUN apt-get install -y \
     glslang-dev \
     glslang-tools \
     file
+    
+# Install LLVM 15
+RUN wget https://apt.llvm.org/llvm.sh
+RUN chmod +x llvm.sh
+RUN ./llvm.sh 15 all
+RUN update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-15 150
+RUN update-alternatives --install /usr/bin/clang clang /usr/bin/clang-15 150
 
 # Download tools for building AppImages
 RUN wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage

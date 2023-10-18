@@ -10,10 +10,13 @@ RUN apt-get install -y \
     # Tools
     build-essential \
     ccache \
+    clang \
     clang-format-15 \
     cmake \
     curl \
     git \
+    lld \
+    llvm \
     ninja-build \
     p7zip-full \
     python3-pip \

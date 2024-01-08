@@ -10,14 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        image: ["linux-appimage", "linux-arm64-appimage", "linux-arm64-appimage-packaging", "linux-fresh"]
+        image: ["linux-appimage", "linux-fresh"]
     
     steps:
     - uses: actions/checkout@v3
-    - name: Set up QEMU
-      uses: docker/setup-qemu-action@v2
-      with:
-        platforms: 'arm64'
     - uses: docker/setup-buildx-action@v2
       name: Setup Docker BuildX system
     - name: Login to DockerHub

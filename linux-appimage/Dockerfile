@@ -52,7 +52,9 @@ RUN apt-get install -y \
     ninja-build \
     glslang-dev \
     glslang-tools \
-    file
+    file \
+# qt6gtk2 dependencies
+    gtk2.0
     
 # Install LLVM 15
 RUN wget https://apt.llvm.org/llvm.sh
@@ -60,6 +62,10 @@ RUN chmod +x llvm.sh
 RUN ./llvm.sh 15 all
 RUN update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-15 150
 RUN update-alternatives --install /usr/bin/clang clang /usr/bin/clang-15 150
+
+# Compile and install qt6gtk2
+RUN git clone --recursive https://github.com/trialuser02/qt6gtk2
+RUN cd qt6gtk2 && qmake6 && make && make install
 
 # Download tools for building AppImages
 RUN wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage

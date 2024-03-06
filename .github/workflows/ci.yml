@@ -27,4 +27,4 @@ jobs:
       with:
         push: ${{ (github.ref == 'refs/heads/master') && (github.repository == 'PabloMK7/build-environments') }}
         context: ${{ matrix.image }}
-        tags: citraemu/build-environments:${{ matrix.image }}
+        tags: pablomk7/build-environments:${{ matrix.image }}

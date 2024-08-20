@@ -11,7 +11,7 @@ RUN apt-get install -y \
     build-essential \
     ccache \
     clang \
-    clang-format-18 \
+    clang-format-15 \
     cmake \
     curl \
     git \

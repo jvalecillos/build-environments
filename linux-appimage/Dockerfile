@@ -19,7 +19,7 @@ RUN apt-get install -y \
     cpp-11 \
     llvm \
     clang \
-    clang-format-18 \
+    clang-format-15 \
 # Qt 6
     qt6-base-dev \
     qt6-base-private-dev \

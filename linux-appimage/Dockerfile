@@ -17,8 +17,8 @@ RUN apt-get install -y \
     gcc-11 \
     g++-11 \
     cpp-11 \
-    llvm-18 \
-    clang-18 \
+    llvm \
+    clang \
     clang-format-18 \
 # Qt 6
     qt6-base-dev \
